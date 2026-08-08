@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PULSE — The Ultimate Smartwatch Experience
 
-## Getting Started
+A **premium, immersive e-commerce web experience** built with Next.js, Tailwind CSS, and TypeScript, featuring a fully interactive colorway showcase, advanced GSAP scroll animations, and a bespoke responsive design.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Interactive spotlight hero section powered by GSAP, featuring dynamic watch colorway switching that tracks mouse movement in real-time
+- Custom high-performance double-ring GSAP cursor with a trailing delay effect and seamless morphing on interactive elements
+- ScrollTrigger-powered storytelling sections, including text reveals, video scroll masking, and staggered highlights ("Scroll Story")
+- Immersive pinned horizontal gallery with seamless layout transitions linking the sections together
+- Advanced UI/UX interactions including magnetic cards and smooth smooth-scroll navigation
+- Clean, modern aesthetic utilizing glassmorphism, precise typography, and a dark mode-first approach
+- Fully responsive architecture — customized interaction scaling and layout adjustments across mobile, tablet, and desktop viewports
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **Next.js 15 (App Router)** – React framework for optimized production and routing
+- **React 18** – Component-based UI architecture and hooks
+- **TypeScript** – Strongly typed JavaScript for robust development
+- **Tailwind CSS v4** – Utility-first styling for responsive layouts and custom design tokens
+- **GSAP 3.12 + ScrollTrigger** – Advanced timeline choreography, pinning, and scroll-bound animations
+- **Custom Fonts** – Geist and Geist Mono optimized via `next/font`
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Preview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Pulse Preview](public/images/preview.png)
+# Pulse
