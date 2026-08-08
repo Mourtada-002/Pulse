@@ -9,14 +9,12 @@ export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   
-  // React 19 / Modern way to check hydration without setting state in useEffect
   const isClient = useSyncExternalStore(
     emptySubscribe,
     () => true,
     () => false
   );
 
-  // If we are on the client, check if it's a fine pointer device (mouse)
   const isFinePointer = isClient ? window.matchMedia("(pointer: fine)").matches : false;
 
   useEffect(() => {
@@ -25,11 +23,9 @@ export default function CustomCursor() {
     const dot = dotRef.current;
     const ring = ringRef.current;
 
-    // Fast follow for the dot
     const dotX = gsap.quickTo(dot, "x", { duration: 0.05, ease: "power3" });
     const dotY = gsap.quickTo(dot, "y", { duration: 0.05, ease: "power3" });
 
-    // Laggy follow for the ring
     const ringX = gsap.quickTo(ring, "x", { duration: 0.3, ease: "power3" });
     const ringY = gsap.quickTo(ring, "y", { duration: 0.3, ease: "power3" });
 
@@ -99,14 +95,14 @@ export default function CustomCursor() {
       {/* Outer Ring */}
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[100] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 transition-colors"
+        className="pointer-events-none fixed left-0 top-0 z-100 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/50 transition-colors"
         style={{ willChange: "transform" }}
       />
       
       {/* Inner Dot */}
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[101] h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+        className="pointer-events-none fixed left-0 top-0 z-101 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
         style={{ willChange: "transform" }}
       />
     </>

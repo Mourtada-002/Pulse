@@ -10,8 +10,6 @@ export default function ScrollVideo() {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Simulate a 360 rotation by scaling and rotating a high-res image
-    // In a real scenario, this would scrub through a video or sprite sheet.
     
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -33,12 +31,11 @@ export default function ScrollVideo() {
       { scale: 2.5, rotation: 10, opacity: 0, duration: 1, ease: "power1.inOut" }
     );
 
-    // Text animations synced with the "video" scrub
     tl.fromTo(
       textRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 0.5 },
-      0.5 // Start appearing halfway through the first zoom
+      0.5 
     )
     .to(
       textRef.current,
@@ -54,11 +51,12 @@ export default function ScrollVideo() {
   return (
     <section ref={sectionRef} className="relative h-screen w-full bg-black overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
-        <div ref={watchRef} className="relative h-[80vh] w-[80vw] md:h-[100vh] w-full max-w-full opacity-0" data-cursor="view">
+        <div ref={watchRef} className="relative h-[80vh] w-[80vw] md:h-screen max-w-full opacity-0" data-cursor="view">
           <Image
             src="/images/watches/watch-black-transparent.png"
             alt="360 View"
             fill
+            sizes="100vw"
             className="object-contain"
           />
         </div>

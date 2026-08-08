@@ -7,7 +7,7 @@ export default function Footer() {
   const textRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    // Parallax effect on the large footer text
+    // Parallax effect
     gsap.to(textRef.current, {
       yPercent: 50,
       ease: "none",

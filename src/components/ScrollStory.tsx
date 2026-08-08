@@ -28,7 +28,6 @@ export default function ScrollStory() {
   const textsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // We pin the container
     ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
@@ -42,9 +41,8 @@ export default function ScrollStory() {
       const tl = gsap.timeline();
 
       STORY_ITEMS.forEach((_, i) => {
-        if (i === 0) return; // First item is already visible
+        if (i === 0) return;
 
-        // Hide previous text, show new text
         tl.to(
           textsRef.current[i - 1],
           { opacity: 0, y: -20, duration: 1 },
@@ -56,7 +54,7 @@ export default function ScrollStory() {
           `step${i}`,
         );
 
-        // Transition images (fade/scale crossfade)
+        // Transition images
         tl.to(
           imagesRef.current[i - 1],
           { opacity: 0, scale: 1.1, duration: 1 },
@@ -95,8 +93,8 @@ export default function ScrollStory() {
               fill
               className="object-cover opacity-50"
             />
-            {/* Gradient Overlay for Text Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
           </div>
         ))}
       </div>

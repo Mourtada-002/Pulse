@@ -10,7 +10,6 @@ export default function Preloader() {
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Prevent scrolling while preloader is active
     document.body.style.overflow = "hidden";
 
     tl.to(textRef.current, {

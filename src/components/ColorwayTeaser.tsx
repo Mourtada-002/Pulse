@@ -20,7 +20,7 @@ export default function ColorwayTeaser() {
           Make it yours.
         </h2>
         
-        <div className="relative h-[400px] w-full max-w-2xl overflow-hidden rounded-3xl bg-black">
+        <div className="relative h-100 w-full max-w-2xl overflow-hidden rounded-3xl bg-black">
           {COLORWAYS.map((c, i) => (
             <div
               key={i}
@@ -32,6 +32,7 @@ export default function ColorwayTeaser() {
                 src={c.image}
                 alt={c.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain p-8"
               />
             </div>

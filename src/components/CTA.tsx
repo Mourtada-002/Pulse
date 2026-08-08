@@ -10,7 +10,7 @@ export default function CTA() {
     // Pulse animation between the two red colors
     const ctx = gsap.context(() => {
       gsap.to(sectionRef.current, {
-        backgroundColor: "#ff2e00", // Brighter red
+        backgroundColor: "#ff2e00",
         duration: 1.5,
         yoyo: true,
         repeat: -1,
@@ -25,7 +25,7 @@ export default function CTA() {
     <section
       ref={sectionRef}
       className="relative flex min-h-[80vh] w-full flex-col items-center justify-center px-6 py-32 text-center selection:bg-black selection:text-white"
-      style={{ backgroundColor: "#e3000f" }} // Initial base red
+      style={{ backgroundColor: "#e3000f" }}
     >
       <div className="absolute top-8 left-1/2 -translate-x-1/2 rounded-full border border-black/20 px-4 py-1 text-sm font-bold uppercase tracking-widest text-black/80">
         Limited Edition Drop

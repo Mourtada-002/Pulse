@@ -63,7 +63,7 @@ export default function Testimonials() {
           Don&apos;t just take our word for it.
         </h2>
 
-        <div className="relative min-h-[300px] flex flex-col items-center justify-center">
+        <div className="relative min-h-75 flex flex-col items-center justify-center">
           <div className="mb-8 flex space-x-2 text-yellow-500">
             {[...Array(REVIEWS[activeIndex].rating)].map((_, i) => (
               <Star key={i} className="h-6 w-6 fill-current" />

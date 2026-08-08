@@ -44,7 +44,7 @@ export default function HorizontalGallery() {
       ref={sectionRef}
       className="relative h-screen w-full bg-black overflow-hidden"
     >
-      {/* Header text - positioned absolutely and won't interfere with images */}
+      {/* Header text */}
       <div className="absolute left-6 top-8 z-10 md:left-24 md:top-12 text-white">
         <h2 className="text-3xl font-bold tracking-tight md:text-5xl drop-shadow-lg">
           Designed for Motion.
@@ -54,7 +54,7 @@ export default function HorizontalGallery() {
         </p>
       </div>
 
-      {/* Gallery - padded down on mobile to clear the header text */}
+      {/* Gallery */}
       <div className="flex h-full items-center pt-20 md:pt-0">
         <div ref={scrollRef} className="flex gap-8 px-6 md:px-24">
           {GALLERY_IMAGES.map((src, i) => (

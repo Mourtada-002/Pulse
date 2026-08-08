@@ -30,11 +30,10 @@ function MagneticCard({ card }: { card: typeof CARDS[0] }) {
   useEffect(() => {
     if (!cardRef.current) return;
 
-    // Use GSAP to animate to the new mouse coordinates (for smoothing)
     gsap.to(cardRef.current, {
-      x: x * 0.1, // Movement multiplier
+      x: x * 0.1,
       y: y * 0.1,
-      rotateX: -y * 0.05, // Tilt multiplier
+      rotateX: -y * 0.05,
       rotateY: x * 0.05,
       duration: 1,
       ease: "power2.out",
@@ -44,7 +43,7 @@ function MagneticCard({ card }: { card: typeof CARDS[0] }) {
   return (
     <div
       ref={cardRef}
-      className="group relative h-[400px] w-full max-w-sm rounded-3xl bg-zinc-900 p-6 transition-all"
+      className="group relative h-100 w-full max-w-sm rounded-3xl bg-zinc-900 p-6 transition-all"
       data-cursor="view"
       style={{ transformStyle: "preserve-3d", perspective: 1000 }}
     >
@@ -56,12 +55,13 @@ function MagneticCard({ card }: { card: typeof CARDS[0] }) {
       />
       <div
         className="relative h-64 w-full"
-        style={{ transform: "translateZ(50px)" }} // Pop out effect
+        style={{ transform: "translateZ(50px)" }}
       >
         <Image
           src={card.image}
           alt={card.title}
           fill
+          sizes="(max-width: 768px) 100vw, 33vw"
           className="object-contain"
         />
       </div>

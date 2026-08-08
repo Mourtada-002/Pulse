@@ -17,7 +17,7 @@ export default function SpotlightHero() {
 
   // Initial animation
   useEffect(() => {
-    const tl = gsap.timeline({ delay: 2.2 }); // After preloader
+    const tl = gsap.timeline({ delay: 2.2 }); 
 
     // Spotlight fade in
     tl.fromTo(
@@ -152,13 +152,13 @@ export default function SpotlightHero() {
       {/* Background Spotlight */}
       <div
         ref={spotlightRef}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 opacity-0 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-150 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 opacity-0 blur-[120px]"
       />
 
       {/* Watches Container */}
       <div
         ref={containerRef}
-        className="relative flex h-[60vh] md:h-[700px] w-full max-w-7xl items-center justify-center"
+        className="relative flex h-[60vh] md:h-175 w-full max-w-7xl items-center justify-center"
       >
         {WATCHES.map((watch, index) => (
           <div
@@ -166,7 +166,7 @@ export default function SpotlightHero() {
             ref={(el) => {
               watchesRef.current[index] = el;
             }}
-            className="absolute left-1/2 top-1/2 h-[450px] w-[350px] md:h-[650px] md:w-[500px] -translate-x-1/2 -translate-y-1/2 cursor-none"
+            className="absolute left-1/2 top-1/2 h-112.5 w-87.5 md:h-162.5 md:w-125 -translate-x-1/2 -translate-y-1/2 cursor-none"
             data-cursor="view"
             onClick={() => {
               if (index !== activeIndex && !isAnimating) {
@@ -181,6 +181,7 @@ export default function SpotlightHero() {
                 src={watch.image}
                 alt={watch.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 500px"
                 className="object-contain"
                 priority={index === 0}
               />

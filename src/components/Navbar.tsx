@@ -17,7 +17,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Reveal navbar after preloader
+    // Reveal navbar
     gsap.fromTo(
       navRef.current,
       { y: -100, opacity: 0 },
