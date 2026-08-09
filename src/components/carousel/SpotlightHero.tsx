@@ -60,14 +60,12 @@ export default function SpotlightHero() {
       let scale = 1;
       let opacity = 1;
       let zIndex = 10;
-      let blur = 0;
 
       if (diff === 0) {
         x = 0;
         scale = 1;
         opacity = 1;
         zIndex = 20;
-        blur = 0;
       } else {
         // Calculate spread
         const absDiff = Math.abs(diff);
@@ -77,7 +75,6 @@ export default function SpotlightHero() {
         scale = Math.max(0.4, 1 - absDiff * 0.25);
         opacity = Math.max(0, 1 - absDiff * 0.4);
         zIndex = 10 - absDiff;
-        blur = absDiff * 2;
       }
 
       if (animate) {
@@ -86,7 +83,6 @@ export default function SpotlightHero() {
           scale,
           opacity,
           zIndex,
-          filter: `blur(${blur}px)`,
           duration: 1,
           ease: "expo.out",
         });
@@ -96,7 +92,6 @@ export default function SpotlightHero() {
           scale,
           opacity,
           zIndex,
-          filter: `blur(${blur}px)`,
         });
       }
     });
@@ -152,7 +147,8 @@ export default function SpotlightHero() {
       {/* Background Spotlight */}
       <div
         ref={spotlightRef}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-150 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 opacity-0 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-150 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0"
+        style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%)" }}
       />
 
       {/* Watches Container */}
@@ -176,7 +172,7 @@ export default function SpotlightHero() {
               }
             }}
           >
-            <div className="relative h-full w-full drop-shadow-2xl">
+            <div className="relative h-full w-full">
               <Image
                 src={watch.image}
                 alt={watch.name}

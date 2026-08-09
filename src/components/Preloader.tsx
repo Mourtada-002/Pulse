@@ -31,6 +31,7 @@ export default function Preloader() {
         ease: "expo.inOut",
         onComplete: () => {
           document.body.style.overflow = "";
+          if (containerRef.current) containerRef.current.style.display = "none";
         },
       });
 
