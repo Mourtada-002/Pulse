@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       <div className="z-10 mt-24 flex w-full max-w-7xl items-center justify-between border-t border-white/10 px-6 pt-8">
-        <p className="text-sm text-gray-500">© 2026 PULSE Inc. All rights reserved.</p>
+        <p className="text-sm text-gray-500">© {new Date().getFullYear()} PULSE Inc. All rights reserved.</p>
         <div className="flex space-x-6 text-sm font-medium text-gray-500">
           <a href="#" className="hover:text-white transition-colors">Twitter</a>
           <a href="#" className="hover:text-white transition-colors">Instagram</a>
