@@ -30,4 +30,3 @@ A **premium, immersive e-commerce web experience** built with Next.js, Tailwind 
 ## Preview
 
 ![Pulse Preview](public/images/preview.png)
-# Pulse
